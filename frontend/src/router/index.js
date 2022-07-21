@@ -1,12 +1,21 @@
  import { createRouter, createWebHistory } from 'vue-router'
 
-import AddCharacter from '@/views/AddCharacter.vue'
+
  const routes = [
    {
-     path: '/addCharacter',
-     name: 'Add Character',
-     component: AddCharacter
+     path: '/',
+     name: 'accueil',
+    component:() => import('../views/Accueil.vue')
    },
+
+   {
+    path: '/addCharacter',
+    name: 'add Character',
+//    // route level code-splitting
+//    // this generates a separate chunk (about.[hash].js) for this route
+//    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/AddCharacter.vue')
+  },
     {
       path: '/konoha',
       name: 'Konoha',
