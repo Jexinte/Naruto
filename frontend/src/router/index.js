@@ -1,25 +1,41 @@
-// import { createRouter, createWebHistory } from 'vue-router'
-// import Konoha from '../views/Konoha.vue'
+ import { createRouter, createWebHistory } from 'vue-router'
 
-// const routes = [
-//   {
-//     path: '/',
-//     name: 'konoha',
-//     component: Konoha
-//   },
-//   {
-//     path: '/about',
-//     name: 'about',
-//     // route level code-splitting
-//     // this generates a separate chunk (about.[hash].js) for this route
-//     // which is lazy-loaded when the route is visited.
-//     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-//   }
-// ]
+import AddCharacter from '@/views/AddCharacter.vue'
+ const routes = [
+   {
+     path: '/addCharacter',
+     name: 'Add Character',
+     component: AddCharacter
+   },
+    {
+      path: '/konoha',
+      name: 'Konoha',
+  //    // route level code-splitting
+  //    // this generates a separate chunk (about.[hash].js) for this route
+  //    // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ '../views/Konoha.vue')
+    },
+    {
+      path: '/kumo',
+      name: 'Kumo',
+  //    // route level code-splitting
+  //    // this generates a separate chunk (about.[hash].js) for this route
+  //    // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ '../views/Kumo.vue')
+    },
+    {
+      path: '/suna',
+      name: 'Suna',
+  //    // route level code-splitting
+  //    // this generates a separate chunk (about.[hash].js) for this route
+  //    // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ '../views/Suna.vue')
+    }
+ ]
 
-// const router = createRouter({
-//   history: createWebHistory(process.env.BASE_URL),
-//   routes
-// })
+ const router = createRouter({
+   history: createWebHistory(process.env.BASE_URL),
+   routes
+ })
 
-// export default router
+ export default router
