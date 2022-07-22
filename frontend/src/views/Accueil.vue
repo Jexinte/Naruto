@@ -5,7 +5,7 @@
 
 <script>
 import ListeDesPersonnages from'@/components/Personnages.vue'
-
+import router from '@/router/'
 export default {
     data() {
         return {};
@@ -30,7 +30,7 @@ export default {
                     box.className = "box";
                     container.appendChild(box);
                     box.style.backgroundImage = `url(${personnage.imageCard})`;
-                    box.href = `../Personnage.vue?id=${personnage.id}`;
+                    box.href = `/personnage?id=${personnage.id}`
                     const nameCharacter = document.createElement("h1");
                     nameCharacter.setAttribute("class", "nameCharacter");
                     box.appendChild(nameCharacter);

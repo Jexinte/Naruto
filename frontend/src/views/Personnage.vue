@@ -6,7 +6,9 @@
         </section>
         
         <a id="back" href="/">
-            <i class="fa-solid fa-arrow-left-long"></i>
+            <!-- <i class="fa-solid fa-arrow-left-long"></i>
+             -->
+             <!-- Modifications à apporter plus tard ! -->
         </a>
         <div class="container">
           
@@ -20,7 +22,9 @@ export default {
   data(){
     return{}
   },
-
+ mounted: function () {
+        this.afficheUnPersonnage();
+    },
   methods : {
     afficheUnPersonnage(){
       // Connexion
