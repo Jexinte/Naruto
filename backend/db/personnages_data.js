@@ -92,7 +92,7 @@ const personnages = [
 
   {
       id : 11,
-      nom: `konohamaru`,
+      nom: `Konohamaru`,
       history:`konohamaru Sarutobi (猿飛木ノ葉丸, Sarutobi konohamaru), est shinobi du clan Sarutobi du village caché de konoha. Il s'efforce à être un jour aussi fort que son idole, Naruto Uzumaki. konohamaru naquit au sein du clan Sarutobi et fut nommé d'après konoha par son grand-père.`,
       imageCard:`http://localhost:3000/img/konohamaruCard.webp`,
       imageHistory:`http://localhost:3000/img/konohamaruHistory.png`,

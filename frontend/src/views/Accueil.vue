@@ -5,7 +5,7 @@
 
 <script>
 import ListeDesPersonnages from'@/components/Personnages.vue'
-import router from '@/router/'
+
 export default {
     data() {
         return {};
@@ -43,6 +43,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import "@/assets/css/personnages.css";
 </style>

@@ -13,10 +13,7 @@
 }
 
 body {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; */
+
   font-family: 'Yellowtail';
   overflow-x: hidden;
   display: flex;
@@ -28,11 +25,11 @@ body {
 }
 
 
-/* #back{
-  display: block;
-  position: absolute;
-  top:.2em;
-  left:0;
+ #back{
+  display:flex;
+  justify-content: center;
+  padding-top: 1em;
+  font-size: 5em;
 }
 
 #back:visited{
@@ -41,15 +38,16 @@ body {
 .fa-solid {
   font-size: 3em;
   padding: 1em;
-} */
+} 
 
 
 
 .container {
   margin-top: 15em;
   display: flex;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
   width: 1440px;
+  margin-bottom: 2em;
 }
 
 .left {

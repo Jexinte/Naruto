@@ -1,15 +1,11 @@
 <template>
 
-  <section>
-            
 
-        </section>
-        
         <a id="back" href="/">
-            <!-- <i class="fa-solid fa-arrow-left-long"></i>
-             -->
-             <!-- Modifications à apporter plus tard ! -->
+<font-awesome-icon icon="fa-solid fa-arrow-left-long" />
         </a>
+
+       
         <div class="container">
           
         </div>
@@ -19,9 +15,6 @@
 <script>
 
 export default {
-  data(){
-    return{}
-  },
  mounted: function () {
         this.afficheUnPersonnage();
     },
@@ -72,7 +65,9 @@ connexionApiNaruto.then(response => {
 </script>
 
 <style>
-
+.test {
+  display: none;
+}
 @import '@/assets/css/personnage.css';
-
+@import '@/assets/css/menu.css'
 </style>
