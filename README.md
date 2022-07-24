@@ -17,9 +17,11 @@ Few weeks have past since I start to learning nodejs again and I'm learning vuej
 
 - Use git clone 
 - Go in the backend folder and launch npm install
-- You have to set your connection to mysql database with Sequelize on .env file 
-- Then launch nodemon and test it !
-
+- You have to set your connection to mysql database with Sequelize an .env example have been provide
+- Launch npm install an the frontend folder then run the server with the following command without brackets : 
+   -  ./node_modules/.bin/vue-cli-service serve
+   
+- Then launch nodemon and backend folder no matter the port as long it's not on 8080 port
 
 # Screenshot
 ![screenshot](https://user-images.githubusercontent.com/88725081/176664015-06a9b7e4-444f-4ce9-9dff-ee5d9d82999a.png)
@@ -28,6 +30,9 @@ Few weeks have past since I start to learning nodejs again and I'm learning vuej
 ![screenshot2](https://user-images.githubusercontent.com/88725081/178142201-07ed58cf-3533-448b-bcc6-8feb1e753543.png)
 
 ![screenshot3](https://user-images.githubusercontent.com/88725081/178142211-da37ae4d-e79a-43d7-85c3-cc3a3b85530b.png)
+
+#Screenshot V3 
+
 
 
 # What I learned
@@ -46,12 +51,11 @@ Few weeks have past since I start to learning nodejs again and I'm learning vuej
 
 - Sequelize ORM have been implemented
 - MVC Structure have been added
-- Music have been added on homepage and each village
 - Add Character Feature have been added
 - Multer have been added
+- Design have been changed
+- Vuejs have been implemented
 
-PS : Update and delete route are not working for now through front-end only with POSTMAN  / Insomnia app for back-end
-Sooner I'll redesign the website
 
 # Author
 
