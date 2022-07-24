@@ -31,7 +31,27 @@ Few weeks have past since I start to learning nodejs again and I'm learning vuej
 
 ![screenshot3](https://user-images.githubusercontent.com/88725081/178142211-da37ae4d-e79a-43d7-85c3-cc3a3b85530b.png)
 
-#Screenshot V3 
+# Screenshot V3 
+
+## Homepage
+![v3](https://user-images.githubusercontent.com/88725081/180665248-fb6e1d82-b379-478e-892d-c8ff0fa0d60d.PNG)
+
+## Konoha Ninjas
+![v3_konoha](https://user-images.githubusercontent.com/88725081/180665249-196ffdaf-c2da-4c93-ba75-57dea08aa5c7.PNG)
+
+## Kumo Ninjas
+![v3_kumo](https://user-images.githubusercontent.com/88725081/180665250-9ea056b4-868d-4db0-98a8-6f96e8f42906.PNG)
+
+## Suna Ninjas
+![v3_suna](https://user-images.githubusercontent.com/88725081/180665251-57bdb72c-c134-48e6-b465-ac485801a11c.PNG)
+
+## When a Character is selected 
+![v3_single_character](https://user-images.githubusercontent.com/88725081/180665365-e5d71d5b-d25e-4f64-b5a8-859d21e732a8.PNG)
+
+## Create a character card
+![v3_formulaire](https://user-images.githubusercontent.com/88725081/180665367-630a5e40-3cd4-48a9-912b-fb0f644e23e5.PNG)
+
+
 
 
 
