@@ -7,4 +7,5 @@
 /public/bundles/
 /var/
 /vendor/
+config/personnages_data.json
 ###< symfony/framework-bundle ###
