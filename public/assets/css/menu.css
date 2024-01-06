@@ -1,34 +1,21 @@
 /* Edu VIC WA NT Beginner Bold 700 */
 @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@700&display=swap');
 
-*,::after,::before {
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-
-    /* COLORS */ 
-
-    --cream :#FFFDD0;
-    --emeraldEntrance : #b68d40;
-    --kaki : #6B8E23;
-}
 
 body {
-  
     font-family: 'Edu VIC WA NT Beginner';
     overflow-x: hidden;
 }
-nav{
+
+nav {
     display: flex;
-gap: 4em;
-justify-content: center;
-font-size: 1.5em;
-line-height: 70px;
-padding-bottom: 1em;
-margin-bottom: 2em;
-padding-top: 1em;
+    gap: 4em;
+    justify-content: center;
+    font-size: 1.5em;
+    line-height: 70px;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    padding-top: 1em;
 }
 
 .logo {
@@ -38,11 +25,10 @@ padding-top: 1em;
 }
 
 a:visited {
-    color:black;
+    color: black;
 }
 
 a {
-    text-decoration: none;
     cursor: pointer;
     font-size: 2em;
 }
@@ -56,17 +42,16 @@ a {
     position: absolute;
     border-bottom: 1px solid #1291e5;
     bottom: -14px;
-    display:block;
+    display: block;
     border-width: 5px;
     width: 0%;
-    transition:  width 700ms ease-in-out;
-    
+    transition: width 700ms ease-in-out;
+
 }
-  #create:hover::after {
 
-  width: 100%;
-}  
-
+#create:hover::after {
+    width: 100%;
+}
 
 
 #konoha {
@@ -78,16 +63,17 @@ a {
     position: absolute;
     border-bottom: 1px solid var(--kaki);
     bottom: -14px;
-    display:block;
+    display: block;
     border-width: 5px;
     width: 0%;
-    transition:  width 400ms ease-in-out;
-    
-}
-  #konoha:hover::after {
+    transition: width 400ms ease-in-out;
 
-  width: 100%;
-}  
+}
+
+#konoha:hover::after {
+
+    width: 100%;
+}
 
 
 #kumo {
@@ -99,16 +85,17 @@ a {
     position: absolute;
     border-bottom: 1px solid var(--cream);
     bottom: -14px;
-    display:block;
+    display: block;
     border-width: 5px;
     width: 0%;
-    transition:  width 700ms ease-in-out;
-    
-}
-  #kumo:hover::after {
+    transition: width 700ms ease-in-out;
 
-  width: 100%;
-}  
+}
+
+#kumo:hover::after {
+
+    width: 100%;
+}
 
 
 #suna {
@@ -120,23 +107,24 @@ a {
     position: absolute;
     border-bottom: 1px solid var(--emeraldEntrance);
     bottom: -14px;
-    display:block;
+    display: block;
     border-width: 5px;
     width: 0%;
-    transition:  width 700ms ease-in-out;
-    
-}
-  #suna:hover::after {
+    transition: width 700ms ease-in-out;
 
-  width: 100%;
-}  
-
-@media screen and (max-width:1115px){
-   
-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1em;
 }
+
+#suna:hover::after {
+
+    width: 100%;
+}
+
+@media screen and (max-width: 1115px) {
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1em;
+    }
 }

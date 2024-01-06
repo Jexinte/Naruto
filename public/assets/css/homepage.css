@@ -1,5 +1,5 @@
 
-.container {
+.container-fluid {
   display: flex;
   gap:2em;
   flex-wrap: wrap;
@@ -21,9 +21,10 @@
   cursor: pointer;
 }
 
-
-
-
+.logo{
+  /*border-radius: 50%;*/
+  background-color: white;
+}
 
 .box:hover {
   animation : rotate 1s ease-in-out;

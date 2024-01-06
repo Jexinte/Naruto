@@ -1,0 +1,30 @@
+{% extends 'layout.twig' %}
+
+{% block css_links %}
+    <link rel="stylesheet" href="/assets/css/menu.css">
+    <link rel="stylesheet" href="/assets/css/homepage.css">
+{% endblock %}
+
+{% block content %}
+    <header>
+        <nav>
+            <a href="#"><img class="logo" src="/assets/img/logo/logo.png" height="80" width="80" alt="logo"></a>
+            <a href="#" id="create">Ajouter un personnage</a>
+            <a href="#" id="konoha">Konoha</a>
+            <a href="#" id="kumo">Kumo</a>
+            <a href="#" id="suna">Suna</a>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        {% for character in characters %}
+            <a href="#" class="box">
+                <h1 class="nameCharacter">{{ character.name }}</h1>
+                <img class="imgCardPath" src="{{ character.imageCardPath }}" alt="" hidden>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="assets/js/tieImgCardPathToCard.js"></script>
+{% endblock %}
