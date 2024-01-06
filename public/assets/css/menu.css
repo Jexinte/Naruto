@@ -35,7 +35,9 @@ a {
 
 #create {
     position: relative;
+    top: 16px;
 }
+
 
 #create::after {
     content: '';
@@ -53,6 +55,9 @@ a {
     width: 100%;
 }
 
+header .village_link {
+    text-decoration: none;
+}
 
 #konoha {
     position: relative;
@@ -115,9 +120,9 @@ a {
 }
 
 #suna:hover::after {
-
     width: 100%;
 }
+
 
 @media screen and (max-width: 1115px) {
 

@@ -1,110 +1,65 @@
-/* Edu VIC WA NT Beginner Bold 700 */
-@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@700&display=swap');
-
-*,::after,::before {
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-
-  /* COLORS */ 
-
-  --cream :#FFFDD0;
-  --emeraldEntrance : #b68d40;
-  --kaki : #6B8E23;
-}
-
-body {
-
-  font-family: 'Edu VIC WA NT Beginner';
-  overflow-x: hidden;
-}
-
-
 
 .box {
-  height: 250px;
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-  background-size: cover;
-  position:relative;
-  z-index: 999;
-  cursor: pointer;
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    position: relative;
+    z-index: 999;
+    cursor: pointer;
 }
 
 .box:hover {
-  animation : rotate 1s ease-in-out;
+    animation: rotate 1s ease-in-out;
 }
 
 @keyframes rotate {
-  from {
-      transform: rotate(-1turn);
-  }
+    from {
+        transform: rotate(-1turn);
+    }
 
-  to {
-      transform:rotate(0);
-  }
+    to {
+        transform: rotate(0);
+    }
 }
 
 
 .box {
-  display: block;
+    display: block;
 
 }
 
-h1 {
-  position: absolute;
-  left:50%;
-  top:50%;
-  transform: translate(-50%,-50%);
-  box-shadow: 5px 5px 10px black;
-  padding:.1em 1em;
-  z-index: 2;
-  cursor: pointer;
-  color:white;
-  font-size: 1em;
-  text-align: center;
-}
 
 
-
-
-
-
-.container {
-  display: flex;
-  gap:2em;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
-  align-items: center;
-  padding-bottom: 5em;
+.container-fluid {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    padding-bottom: 5em;
 }
 
 
 
 
-.fa-solid {
-  font-size: 3em;
-  padding: 1em;
-}
-#back:hover{
+#back:hover {
 
-  animation : moveToLeft ease-in 400ms
+    animation: moveToLeft ease-in 400ms
 }
 
 
 @keyframes moveToLeft {
-  
-  from {
-      position: relative;
-      right: 0px;
-  }
-  
-  to {
-      position: relative;
-      right: 12px;
-  }
+
+    from {
+        position: relative;
+        right: 0px;
+    }
+
+    to {
+        position: relative;
+        right: 12px;
+    }
 }
