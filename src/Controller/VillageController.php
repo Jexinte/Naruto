@@ -13,16 +13,22 @@ class VillageController extends AbstractController
     public function konohaCharactersGet(CharactersRepository $charactersRepository): Response
     {
 
-        return $this->render('village/konoha/konoha.twig', [
+        return new Response($this->render('village/konoha/konoha.twig', [
             'characters' => $charactersRepository->findBy(['village' => 'konoha']),
-        ]);
+        ]));
     }
     #[Route('/kumo-characters', name: 'kumoCharacters',methods: ['GET'])]
     public function kumoCharactersGet(CharactersRepository $charactersRepository): Response
     {
-
-        return $this->render('village/kumo/kumo.twig', [
+        return new Response($this->render('village/kumo/kumo.twig', [
             'characters' => $charactersRepository->findBy(['village' => 'kumo']),
-        ]);
+        ]));
+    }
+    #[Route('/suna-characters', name: 'sunaCharacters',methods: ['GET'])]
+    public function sunaCharactersGet(CharactersRepository $charactersRepository): Response
+    {
+        return new Response($this->render('village/suna/suna.twig', [
+            'characters' => $charactersRepository->findBy(['village' => 'suna']),
+        ]));
     }
 }

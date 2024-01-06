@@ -1,6 +1,6 @@
 {% extends 'layout.twig' %}
 
-{% block title %} <title> Personnages de Kumo | {{ parent() }}</title> {% endblock %}
+{% block title %} <title> Personnages de Suna | {{ parent() }}</title> {% endblock %}
 {% block css_links %}
     <link rel="stylesheet" href="/assets/css/village.css">
     <link rel="stylesheet" href="/assets/css/menu.css">
@@ -12,7 +12,7 @@
             <a href="{{ path('homepage') }}" class="village_link"><img class="logo" src="/assets/img/logo/logo.png" height="80" width="80" alt="logo"></a>
             <a href="#" class="village_link" id="create"><i class="fa-solid fa-plus"></i></a>
             <a href="{{ path('konohaCharacters') }}" class="village_link" id="konoha">Konoha</a>
-            <a href="{{ path('sunaCharacters') }}" class="village_link" id="suna">Suna</a>
+            <a href="{{ path('kumoCharacters') }}" class="village_link" id="kumo">Kumo</a>
         </nav>
     </header>
     <div class="container-fluid">
