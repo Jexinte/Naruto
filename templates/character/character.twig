@@ -1,0 +1,23 @@
+{% extends 'layout.twig' %}
+
+{% block title %} <title>Accueil | {{ parent() }}</title> {% endblock %}
+{% block css_links %}
+    <link rel="stylesheet" href="/assets/css/character.css">
+{% endblock %}
+
+{% block content %}
+    <header>
+        <nav>
+            <a href="{{ path('homepage') }}" id="back"><i class="fa-solid fa-arrow-left"></i></a>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="left">
+            <img class="imgHistoryPath" src="{{ character.imageHistoryPath }}" alt="image character" >
+        </div>
+        <div class="right">
+            <h1 class="nameOfTheCharacter">{{ character.name }}</h1>
+            <p class="historyOfTheCharacter">{{ character.history }}</p>
+        </div>
+    </div>
+{% endblock %}

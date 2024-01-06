@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Characters;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 
 class AppFixtures extends Fixture
 {
@@ -19,9 +20,14 @@ class AppFixtures extends Fixture
             $newCharacter->setImageCardPath($character["imageCardPath"]);
             $newCharacter->setImageHistoryPath($character["imageHistoryPath"]);
             $newCharacter->setVillage($character["village"]);
+            $newCharacter->setSlug($character['name'],$this->slugger());
             $manager->persist($newCharacter);
         }
         $manager->flush();
 
+    }
+    public function slugger():AsciiSlugger
+    {
+        return new AsciiSlugger();
     }
 }

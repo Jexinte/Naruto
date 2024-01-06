@@ -1,5 +1,6 @@
 {% extends 'layout.twig' %}
 
+{% block title %} <title>Accueil | {{ parent() }}</title> {% endblock %}
 {% block css_links %}
     <link rel="stylesheet" href="/assets/css/menu.css">
     <link rel="stylesheet" href="/assets/css/homepage.css">
@@ -17,7 +18,7 @@
     </header>
     <div class="container-fluid">
         {% for character in characters %}
-            <a href="#" class="box">
+            <a href="{{ path('character',{slug:character.slug|lower}) }}" class="box">
                 <h1 class="nameCharacter">{{ character.name }}</h1>
                 <img class="imgCardPath" src="{{ character.imageCardPath }}" alt="" hidden>
             </a>

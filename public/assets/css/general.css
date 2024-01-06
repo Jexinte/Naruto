@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 :root {
 
     /* COLORS */
@@ -9,7 +10,7 @@
     --cream: #FFFDD0;
     --emeraldEntrance: #b68d40;
     --kaki: #6B8E23;
-    --black : #000;
+    --black: #000;
 }
 
 a {
@@ -17,6 +18,6 @@ a {
     font-weight: bolder;
 }
 
-a:visited{
+a:visited {
     color: var(--black);
 }

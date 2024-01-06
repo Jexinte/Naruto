@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CharactersRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 
 #[ORM\Entity(repositoryClass: CharactersRepository::class)]
 class Characters
@@ -27,6 +28,8 @@ class Characters
 
     #[ORM\Column(length: 255)]
     private ?string $village = null;
+    #[ORM\Column(length: 255)]
+    private ?string $slug;
 
     public function getId(): ?int
     {
@@ -91,5 +94,15 @@ class Characters
         $this->village = $village;
 
         return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug, AsciiSlugger $slugger): void
+    {
+        $this->slug = $slugger->slug($slug, '-');
     }
 }
