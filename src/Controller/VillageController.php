@@ -17,5 +17,12 @@ class VillageController extends AbstractController
             'characters' => $charactersRepository->findBy(['village' => 'konoha']),
         ]);
     }
+    #[Route('/kumo-characters', name: 'kumoCharacters',methods: ['GET'])]
+    public function kumoCharactersGet(CharactersRepository $charactersRepository): Response
+    {
 
+        return $this->render('village/kumo/kumo.twig', [
+            'characters' => $charactersRepository->findBy(['village' => 'kumo']),
+        ]);
+    }
 }
