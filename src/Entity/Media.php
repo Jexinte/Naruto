@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\MediaRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MediaRepository::class)]
 class Media
@@ -18,6 +20,18 @@ class Media
 
     #[ORM\Column(length: 255)]
     private ?string $imageHistoryPath = null;
+    #[Assert\File(
+        extensions: ['jpg','png','webp','jpeg'],
+        extensionsMessage: 'Oops! Seuls les fichiers ayant les extensions suivantes sont acceptées : jpg,png,webp et jpeg'
+    )]
+    #[Assert\NotBlank(message: 'Oops! Veuillez sélectionner une image pour la carte du personnage!')]
+    private ?UploadedFile $imageCardFile;
+    #[Assert\File(
+        extensions: ['jpg','png','webp','jpeg'],
+        extensionsMessage: 'Oops! Seuls les fichiers ayant les extensions suivantes sont acceptées : jpg,png,webp et jpeg'
+    )]
+    #[Assert\NotBlank(message: 'Oops! Veuillez sélectionner une image pour la carte du personnage!')]
+    private ?UploadedFile $imageHistoryFile;
 
     #[ORM\ManyToOne(inversedBy: 'media')]
     private ?Characters $characters = null;
@@ -32,7 +46,7 @@ class Media
         return $this->imageCardPath;
     }
 
-    public function setImageCardPath(string $imageCardPath): static
+    public function setImageCardPath(?string $imageCardPath): static
     {
         $this->imageCardPath = $imageCardPath;
 
@@ -44,7 +58,7 @@ class Media
         return $this->imageHistoryPath;
     }
 
-    public function setImageHistoryPath(string $imageHistoryPath): static
+    public function setImageHistoryPath(?string $imageHistoryPath): static
     {
         $this->imageHistoryPath = $imageHistoryPath;
 
@@ -61,5 +75,25 @@ class Media
         $this->characters = $characters;
 
         return $this;
+    }
+
+    public function getImageCardFile(): ?UploadedFile
+    {
+        return $this->imageCardFile;
+    }
+
+    public function setImageCardFile(?UploadedFile $imageCardFile): void
+    {
+        $this->imageCardFile = $imageCardFile;
+    }
+
+    public function getImageHistoryFile(): ?UploadedFile
+    {
+        return $this->imageHistoryFile;
+    }
+
+    public function setImageHistoryFile(?UploadedFile $imageHistoryFile): void
+    {
+        $this->imageHistoryFile = $imageHistoryFile;
     }
 }

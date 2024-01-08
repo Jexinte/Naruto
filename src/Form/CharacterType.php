@@ -25,22 +25,16 @@ class CharacterType extends AbstractType
                 'label' => 'Histoire du personnage',
                 'required' => false,
             ])
-            ->add('imageCard',FileType::class,[
-                'label' => 'Ajouter une image pour la carte du personnage',
-                'mapped' => false
-            ])
-            ->add('imageHistory',FileType::class,[
-                'label' => 'Ajouter une image pour l\'histoire du personnage',
-                'mapped' => false
-            ])
+
             ->add('village',ChoiceType::class, [
                 'label' => 'Village du personnage',
                 'choices' => [
-                    'Konoha' => true,
+                    'Konoha' => 'konoha',
                     'Kumo' => 'kumo',
                     'Suna' => 'suna'
                 ]
             ])
+            ->add('mediaForm',MediaType::class)
             ->add('save',SubmitType::class,['label' => 'Envoyer','attr' => ['class' => 'btn btn-dark']])
         ;
     }

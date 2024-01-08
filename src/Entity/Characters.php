@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\Validator\Constraints as Assert;
+
 #[ORM\Entity(repositoryClass: CharactersRepository::class)]
 class Characters
 {
@@ -20,7 +21,7 @@ class Characters
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: 'Oops! Ce champ ne peut être vide !')]
     #[Assert\Regex(
-        pattern:'/^[A-Z]{1}[a-z\s]{1,}/',
+        pattern: '/^[A-Z]{1}[a-z\s]{1,}/',
         message: 'Oops! Le nom du personnage doit commencer par une majuscule !',
         match: true
     )]
@@ -36,8 +37,11 @@ class Characters
     #[ORM\Column(length: 255)]
     private ?string $slug;
 
-    #[ORM\OneToMany(mappedBy: 'characters', targetEntity: Media::class)]
+    #[ORM\OneToMany(mappedBy: 'characters', targetEntity: Media::class,cascade: ['persist'])]
     private Collection $media;
+    #[Assert\Valid]
+    #[Assert\Type(type: Media::class)]
+    private Media $mediaForm;
 
     public function __construct()
     {
@@ -104,25 +108,37 @@ class Characters
         return $this->media;
     }
 
-    public function addMedium(Media $medium): static
+    public function addMedia(Media $media)
     {
-        if (!$this->media->contains($medium)) {
-            $this->media->add($medium);
-            $medium->setCharacters($this);
+        if (!$this->media->contains($media)) {
+            $this->media->add($media);
+            $media->setCharacters($this);
         }
 
         return $this;
     }
 
-    public function removeMedium(Media $medium): static
+    public function removeMedia(Media $media): static
     {
-        if ($this->media->removeElement($medium)) {
+        if ($this->media->removeElement($media)) {
             // set the owning side to null (unless already changed)
-            if ($medium->getCharacters() === $this) {
-                $medium->setCharacters(null);
+            if ($media->getCharacters() === $this) {
+                $media->setCharacters(null);
             }
         }
 
         return $this;
     }
+
+    public function getMediaForm(): Media
+    {
+        return $this->mediaForm;
+    }
+
+    public function setMediaForm(Media $mediaForm): void
+    {
+        $this->mediaForm = $mediaForm;
+    }
+
+
 }

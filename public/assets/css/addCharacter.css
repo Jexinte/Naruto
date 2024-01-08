@@ -18,6 +18,9 @@
 
 #add_character {
     padding-inline: 0;
+    background-image: url("https://wallpaperaccess.com/full/1964540.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 ul li {
     color:indianred;
@@ -32,6 +35,9 @@ ul li {
     top:5.9em;
 }
 
+.container-fluid div:nth-child(4) > label {
+    display: none;
+}
 label {
     font-weight: bolder;
 }
@@ -39,4 +45,9 @@ label {
 #form {
     padding-inline: 1em;
     margin-top:2em;
+    margin-bottom: 3em;
+}
+
+.container-fluid div:nth-child(5) {
+   bottom: 3em;
 }
