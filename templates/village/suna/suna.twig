@@ -17,10 +17,15 @@
     </header>
     <div class="container-fluid">
         {% for character in characters %}
-            <a href="{{ path('character',{slug:character.slug|lower}) }}" class="box">
-                <h1 class="nameCharacter">{{ character.name }}</h1>
-                <img class="imgCardPath" src="{{ character.imageCardPath }}" alt="" hidden>
-            </a>
+            {% for media in medias %}
+                {% if character.id == media.getCharacters.id %}
+                    <a href="{{ path('character',{slug:character.slug|lower}) }}" class="box">
+                        <h1 class="nameCharacter">{{ character.name }}</h1>
+                        <img class="imgCardPath" src="{{ media.imageCardPath }}" alt="" hidden>
+                    </a>
+                {% endif %}
+            {% endfor %}
+
         {% endfor %}
     </div>
 {% endblock %}

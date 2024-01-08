@@ -13,9 +13,9 @@ class HomepageController extends AbstractController
     #[Route('/', name: 'homepage')]
     public function index(CharactersRepository $characterRepository,MediaRepository $mediaRepository): Response
     {
-        return new Response($this->render('homepage/homepage.twig', [
+        return $this->render('homepage/homepage.twig', [
             'characters' => $characterRepository->findAll(),
             'medias' => $mediaRepository->findAll()
-        ]));
+        ]);
     }
 }
