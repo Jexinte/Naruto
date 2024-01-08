@@ -9,8 +9,8 @@
 {% block content %}
     <header>
         <nav>
-            <a href="#" class="village_link"><img class="logo" src="/assets/img/logo/logo.png" height="80" width="80" alt="logo"></a>
-            <a href="#" class="village_link" id="create"><i class="fa-solid fa-plus"></i></a>
+            <a href="{{ path('homepage') }}" class="village_link"><img class="logo" src="/assets/img/logo/logo.png" height="80" width="80" alt="logo"></a>
+            <a href="{{ path('addCharacterGet') }}" class="village_link" id="create"><i class="fa-solid fa-plus"></i></a>
             <a href="{{ path('konohaCharacters') }}" class="village_link" id="konoha">Konoha</a>
             <a href="{{ path('kumoCharacters') }}" class="village_link" id="kumo">Kumo</a>
             <a href="{{ path('sunaCharacters') }}" class="village_link" id="suna">Suna</a>
@@ -18,10 +18,15 @@
     </header>
     <div class="container-fluid">
         {% for character in characters %}
-            <a href="{{ path('character',{slug:character.slug|lower}) }}" class="box">
-                <h1 class="nameCharacter">{{ character.name }}</h1>
-                <img class="imgCardPath" src="{{ character.imageCardPath }}" alt="" hidden>
-            </a>
+            {% for media in medias %}
+                {% if character.id == media.getCharacters.getid %}
+                    <a href="{{ path('character',{slug:character.slug|lower}) }}" class="box">
+                        <h1 class="nameCharacter">{{ character.name }}</h1>
+                        <img class="imgCardPath" src="{{ media.imageCardPath }}" alt="" hidden>
+                    </a>
+                {% endif %}
+
+            {% endfor %}
         {% endfor %}
     </div>
 {% endblock %}

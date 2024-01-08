@@ -1,6 +1,7 @@
 *, ::after, ::before {
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 
 :root {
@@ -55,6 +56,8 @@ a:visited {
 }
 .box {
     display: block;
-
 }
 
+#copyright{
+    font-weight: bolder;
+}

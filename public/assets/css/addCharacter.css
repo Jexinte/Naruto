@@ -1,0 +1,42 @@
+.container-fluid div:nth-child(n){
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 3em;
+    gap: 1em;
+}
+.container-fluid div:nth-child(6){
+   margin-top: 2em;
+}
+
+.container-fluid ul {
+    position: absolute;
+    left:0;
+    padding-left: 0;
+    top:5em;
+}
+
+#add_character {
+    padding-inline: 0;
+}
+ul li {
+    color:indianred;
+    font-weight: bolder;
+}
+
+#character_save {
+    font-weight: bolder;
+}
+.container-fluid div:nth-child(2) > ul
+{
+    top:5.9em;
+}
+
+label {
+    font-weight: bolder;
+}
+
+#form {
+    padding-inline: 1em;
+    margin-top:2em;
+}

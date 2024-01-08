@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Characters;
+use App\Entity\Media;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\String\Slugger\AsciiSlugger;
@@ -17,16 +18,21 @@ class AppFixtures extends Fixture
             $newCharacter = new Characters();
             $newCharacter->setName($character["name"]);
             $newCharacter->setHistory($character["history"]);
-            $newCharacter->setImageCardPath($character["imageCardPath"]);
-            $newCharacter->setImageHistoryPath($character["imageHistoryPath"]);
             $newCharacter->setVillage($character["village"]);
-            $newCharacter->setSlug($character['name'],$this->slugger());
+            $newCharacter->setSlug($character['name'], $this->slugger());
+
+            $media = new Media();
+            $media->setCharacters($newCharacter);
+            $media->setImageCardPath($character['imageCardPath']);
+            $media->setImageHistoryPath($character['imageHistoryPath']);
             $manager->persist($newCharacter);
+            $manager->persist($media);
         }
         $manager->flush();
 
     }
-    public function slugger():AsciiSlugger
+
+    public function slugger(): AsciiSlugger
     {
         return new AsciiSlugger();
     }

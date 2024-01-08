@@ -1,0 +1,30 @@
+{% extends 'layout.twig' %}
+
+{% block title %} <title>Ajouter un personnage | {{ parent() }}</title> {% endblock %}
+{% block css_links %}
+    <link rel="stylesheet" href="/assets/css/menu.css">
+    <link rel="stylesheet" href="/assets/css/addCharacter.css">
+{% endblock %}
+
+{% block content %}
+    <header>
+        <nav>
+            <a href="#" class="village_link"><img class="logo" src="/assets/img/logo/logo.png" height="80" width="80" alt="logo"></a>
+            <a href="#" class="village_link" id="create"><i class="fa-solid fa-plus"></i></a>
+            <a href="{{ path('konohaCharacters') }}" class="village_link" id="konoha">Konoha</a>
+            <a href="{{ path('kumoCharacters') }}" class="village_link" id="kumo">Kumo</a>
+            <a href="{{ path('sunaCharacters') }}" class="village_link" id="suna">Suna</a>
+        </nav>
+    </header>
+    
+    
+    <div class="container-fluid" id="add_character">
+        <div class="banner">
+            <img src="https://wallpapercg.com/download/naruto-uzumaki-3840x2160-17157.jpg" alt="">
+        </div>
+        <h1 class="text-center">Ajouter un personnage</h1>
+    {{ form_start(form,{path: 'addCharacterPost'})}}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+

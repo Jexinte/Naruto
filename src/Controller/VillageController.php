@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class VillageController extends AbstractController
 {
-    #[Route('/konoha-characters', name: 'konohaCharacters',methods: ['GET'])]
+    #[Route('/konoha-personnages', name: 'konohaCharacters',methods: ['GET'])]
     public function konohaCharactersGet(CharactersRepository $charactersRepository): Response
     {
 
@@ -17,14 +17,14 @@ class VillageController extends AbstractController
             'characters' => $charactersRepository->findBy(['village' => 'konoha']),
         ]));
     }
-    #[Route('/kumo-characters', name: 'kumoCharacters',methods: ['GET'])]
+    #[Route('/kumo-personnages', name: 'kumoCharacters',methods: ['GET'])]
     public function kumoCharactersGet(CharactersRepository $charactersRepository): Response
     {
         return new Response($this->render('village/kumo/kumo.twig', [
             'characters' => $charactersRepository->findBy(['village' => 'kumo']),
         ]));
     }
-    #[Route('/suna-characters', name: 'sunaCharacters',methods: ['GET'])]
+    #[Route('/suna-personnages', name: 'sunaCharacters',methods: ['GET'])]
     public function sunaCharactersGet(CharactersRepository $charactersRepository): Response
     {
         return new Response($this->render('village/suna/suna.twig', [
