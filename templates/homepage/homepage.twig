@@ -17,6 +17,11 @@
         </nav>
     </header>
     <div class="container-fluid">
+        {% for message in app.flashes('success') %}
+            <div class="flash-success">
+                {{ message }}
+            </div>
+        {% endfor %}
         {% for character in characters %}
             {% for media in medias %}
                 {% if character.id == media.getCharacters.getid %}

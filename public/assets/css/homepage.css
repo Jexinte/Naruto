@@ -16,6 +16,16 @@
   background-color: white;
 }
 
+.flash-success{
+  background: #a9e3a9;
+  color: white;
+  padding: 2em;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-align: center;
+}
 
 
 @keyframes rotate {

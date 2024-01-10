@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomepageController extends AbstractController
 {
     #[Route('/', name: 'homepage')]
-    public function index(CharactersRepository $characterRepository,MediaRepository $mediaRepository): Response
+    public function homepage(CharactersRepository $characterRepository,MediaRepository $mediaRepository): Response
     {
         return $this->render('homepage/homepage.twig', [
             'characters' => $characterRepository->findAll(),
