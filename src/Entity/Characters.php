@@ -6,7 +6,6 @@ use App\Repository\CharactersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -97,7 +96,7 @@ class Characters
 
     public function setSlug(?string $slug, AsciiSlugger $slugger): void
     {
-        $this->slug = $slugger->slug($slug, '-');
+        $this->slug = $slugger->slug($slug, '-')->lower();
     }
 
     /**

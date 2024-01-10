@@ -25,7 +25,7 @@
         {% for character in characters %}
             {% for media in medias %}
                 {% if character.id == media.getCharacters.getid %}
-                    <a href="{{ path('character',{slug:character.slug|lower}) }}" class="box">
+                    <a href="{{ path('character',{slug:character.slug}) }}" class="box">
                         <h1 class="nameCharacter">{{ character.name }}</h1>
                         <img class="imgCardPath" src="{{ media.imageCardPath }}" alt="" hidden>
                     </a>
