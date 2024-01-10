@@ -58,7 +58,7 @@ class CharacterController extends AbstractController
             $charactersRepository->getEm()->flush();
 
             $this->addFlash('success', 'L\'enregistrement du personnage a bien été pris en compte !');
-            $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('homepage');
 
         }
         return $this->render('character/add_character.twig', [
