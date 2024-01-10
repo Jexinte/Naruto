@@ -2,8 +2,8 @@
 
 {% block title %} <title>Ajouter un personnage | {{ parent() }}</title> {% endblock %}
 {% block css_links %}
-    <link rel="stylesheet" href="/assets/css/menu.css">
-    <link rel="stylesheet" href="/assets/css/addCharacter.css">
+    <link rel="stylesheet" href="/assets/css/menu.css{{_self.commonContent()}}">
+    <link rel="stylesheet" href="/assets/css/addCharacter.css{{_self.commonContent()}}">
 {% endblock %}
 
 {% block content %}

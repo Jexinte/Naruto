@@ -2,8 +2,8 @@
 
 {% block title %} <title> Personnages de Suna | {{ parent() }}</title> {% endblock %}
 {% block css_links %}
-    <link rel="stylesheet" href="/assets/css/village.css">
-    <link rel="stylesheet" href="/assets/css/menu.css">
+    <link rel="stylesheet" href="/assets/css/village.css?{{_self.commonContent()}}">
+    <link rel="stylesheet" href="/assets/css/menu.css?{{_self.commonContent()}}">
 {% endblock %}
 
 {% block content %}

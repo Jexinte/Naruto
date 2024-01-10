@@ -2,7 +2,7 @@
 
 {% block title %} <title>Accueil | {{ parent() }}</title> {% endblock %}
 {% block css_links %}
-    <link rel="stylesheet" href="/assets/css/character.css">
+    <link rel="stylesheet" href="/assets/css/character.css?{{_self.commonContent()}}">
 {% endblock %}
 
 {% block content %}
