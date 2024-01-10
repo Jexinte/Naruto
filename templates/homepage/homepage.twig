@@ -2,8 +2,8 @@
 
 {% block title %} <title>Accueil | {{ parent() }}</title> {% endblock %}
 {% block css_links %}
-    <link rel="stylesheet" href="/assets/css/menu.css?{{_self.commonContent()}}">
-    <link rel="stylesheet" href="/assets/css/homepage.css?{{_self.commonContent()}}">
+    <link rel="stylesheet" href="/assets/css/menu.css?{{_self.cssVersionning()}}">
+    <link rel="stylesheet" href="/assets/css/homepage.css?{{_self.cssVersionning()}}">
 {% endblock %}
 
 {% block content %}
