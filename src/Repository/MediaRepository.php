@@ -1,4 +1,13 @@
 <?php
+/**
+ * PHP version 8.
+ *
+ * @category Repository
+ * @package  MediaRepository
+ * @author   Yokke <mdembelepro@gmail.com>
+ * @license  ISC License
+ * @link     https://github.com/Jexinte/Naruto
+ */
 
 namespace App\Repository;
 
@@ -17,12 +26,19 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class MediaRepository extends ServiceEntityRepository
 {
+    /**
+     * Summary of __construct
+     *
+     * @param ManagerRegistry $registry Object
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Media::class);
     }
 
     /**
+     * Summary of getEm
+     *
      * @return EntityManagerInterface
      */
     public function getEm(): EntityManagerInterface

@@ -1,4 +1,13 @@
 <?php
+/**
+ * PHP version 8.
+ *
+ * @category Entity
+ * @package  Characters
+ * @author   Yokke <mdembelepro@gmail.com>
+ * @license  ISC License
+ * @link     https://github.com/Jexinte/Naruto
+ */
 
 namespace App\Entity;
 
@@ -41,27 +50,47 @@ class Characters
     #[ORM\Column(length: 255)]
     private ?string $slug;
 
-    #[ORM\OneToMany(mappedBy: 'characters', targetEntity: Media::class,cascade: ['persist'])]
+    #[ORM\OneToMany(mappedBy: 'characters', targetEntity: Media::class, cascade: ['persist'])]
     private Collection $media;
     #[Assert\Valid]
     #[Assert\Type(type: Media::class)]
     private Media $mediaForm;
 
+    /**
+     * Summary of __construct
+     */
     public function __construct()
     {
         $this->media = new ArrayCollection();
     }
 
+    /**
+     * Summary of getId
+     *
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * Summary of getName
+     *
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * Summary of setName
+     *
+     * @param string $name String
+     *
+     * @return $this
+     */
     public function setName(string $name): static
     {
         $this->name = $name;
@@ -69,11 +98,23 @@ class Characters
         return $this;
     }
 
+    /**
+     * Summary of getHistory
+     *
+     * @return string|null
+     */
     public function getHistory(): ?string
     {
         return $this->history;
     }
 
+    /**
+     * Summary of setHistory
+     *
+     * @param string $history String
+     *
+     * @return $this
+     */
     public function setHistory(string $history): static
     {
         $this->history = $history;
@@ -82,11 +123,23 @@ class Characters
     }
 
 
+    /**
+     * Summary of getVillage
+     *
+     * @return string|null
+     */
     public function getVillage(): ?string
     {
         return $this->village;
     }
 
+    /**
+     * Summary of setVillage
+     *
+     * @param string $village String
+     *
+     * @return $this
+     */
     public function setVillage(string $village): static
     {
         $this->village = $village;
@@ -94,17 +147,32 @@ class Characters
         return $this;
     }
 
+    /**
+     * Summary of getSlug
+     *
+     * @return string|null
+     */
     public function getSlug(): ?string
     {
         return $this->slug;
     }
 
+    /**
+     * Summary of setSlug
+     *
+     * @param string|null $slug String
+     * @param AsciiSlugger $slugger Object
+     *
+     * @return void
+     */
     public function setSlug(?string $slug, AsciiSlugger $slugger): void
     {
         $this->slug = $slugger->slug($slug, '-')->lower();
     }
 
     /**
+     * Summary of getMedia
+     *
      * @return Collection<int, Media>
      */
     public function getMedia(): Collection
@@ -112,6 +180,12 @@ class Characters
         return $this->media;
     }
 
+    /**
+     * Summary of addMedia
+     * @param Media $media Object
+     *
+     * @return $this
+     */
     public function addMedia(Media $media)
     {
         if (!$this->media->contains($media)) {
@@ -122,23 +196,24 @@ class Characters
         return $this;
     }
 
-    public function removeMedia(Media $media): static
-    {
-        if ($this->media->removeElement($media)) {
-            // set the owning side to null (unless already changed)
-            if ($media->getCharacters() === $this) {
-                $media->setCharacters(null);
-            }
-        }
 
-        return $this;
-    }
-
+    /**
+     * Summary of getMediaForm
+     *
+     * @return Media
+     */
     public function getMediaForm(): Media
     {
         return $this->mediaForm;
     }
 
+    /**
+     * Summary of setMediaForm
+     *
+     * @param Media $mediaForm Object
+     *
+     * @return void
+     */
     public function setMediaForm(Media $mediaForm): void
     {
         $this->mediaForm = $mediaForm;

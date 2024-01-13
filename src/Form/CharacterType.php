@@ -1,4 +1,13 @@
 <?php
+/**
+ * PHP version 8.
+ *
+ * @category Form
+ * @package  CharacterType
+ * @author   Yokke <mdembelepro@gmail.com>
+ * @license  ISC License
+ * @link     https://github.com/Jexinte/Naruto
+ */
 
 namespace App\Form;
 
@@ -14,19 +23,27 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CharacterType extends AbstractType
 {
+    /**
+     * Summary of buildForm
+     *
+     * @param FormBuilderInterface $builder Object
+     * @param array $options Array
+     *
+     * @return void
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name',TextType::class,[
+            ->add('name', TextType::class, [
                 'label' => 'Nom du personnage',
                 'required' => false,
             ])
-            ->add('history',TextareaType::class,[
+            ->add('history', TextareaType::class, [
                 'label' => 'Histoire du personnage',
                 'required' => false,
             ])
 
-            ->add('village',ChoiceType::class, [
+            ->add('village', ChoiceType::class, [
                 'label' => 'Village du personnage',
                 'choices' => [
                     'Konoha' => 'konoha',
@@ -34,11 +51,18 @@ class CharacterType extends AbstractType
                     'Suna' => 'suna'
                 ]
             ])
-            ->add('mediaForm',MediaType::class)
-            ->add('save',SubmitType::class,['label' => 'Envoyer','attr' => ['class' => 'btn btn-dark']])
+            ->add('mediaForm', MediaType::class)
+            ->add('save', SubmitType::class, ['label' => 'Envoyer','attr' => ['class' => 'btn btn-dark']])
         ;
     }
 
+    /**
+     * Summary of configureOptions
+     *
+     * @param OptionsResolver $resolver Object
+     *
+     * @return void
+     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

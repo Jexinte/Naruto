@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * PHP version 8.
+ *
+ * @category tests
+ * @package  HomepageControllerTest
+ * @author   Yokke <mdembelepro@gmail.com>
+ * @license  ISC License
+ * @link     https://github.com/Jexinte/Naruto
+ */
 namespace App\Tests\Functional;
 
 use App\Repository\CharactersRepository;
@@ -11,19 +19,33 @@ class HomepageControllerTest extends WebTestCase
 {
     private readonly KernelBrowser $browser;
 
+    /**
+     * Summary of getCharacters
+     *
+     * @return CharactersRepository
+     */
     public function getCharacters(): CharactersRepository
     {
         return static::getContainer()->get(CharactersRepository::class);
     }
 
 
+    /**
+     * Summary of setUp
+     *
+     * @return void
+     */
+    public function setUp(): void
+    {
+        $this->browser = static::createClient();
+    }
 
-public function setUp(): void
-{
-    $this->browser = static::createClient();
-}
-
-public function testShouldReturnAllCharactersOnHomepage(): void
+    /**
+     * Summary of testShouldReturnAllCharactersOnHomepage
+     *
+     * @return void
+     */
+    public function testShouldReturnAllCharactersOnHomepage(): void
 {
     $this->browser->request('GET', '/');
     $this->assertResponseIsSuccessful();

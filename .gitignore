@@ -16,4 +16,11 @@ config/personnages_data.json
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
+###> phpcs-fixer ###
+tools
+.php-cs-fixer.cache
+###< phpcs-fixer ###
 
+###> rector ###
+rector.php
+###< rector ###

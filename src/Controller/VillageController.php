@@ -1,4 +1,13 @@
 <?php
+/**
+ * PHP version 8.
+ *
+ * @category Controller
+ * @package  VillageController
+ * @author   Yokke <mdembelepro@gmail.com>
+ * @license  ISC License
+ * @link     https://github.com/Jexinte/Naruto
+ */
 
 namespace App\Controller;
 
@@ -10,6 +19,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class VillageController extends AbstractController
 {
+    /**
+     * Summary of konohaCharactersGet
+     *
+     * @param CharactersRepository $charactersRepository Object
+     * @param MediaRepository $mediaRepository Object
+     *
+     * @return Response
+     */
     #[Route('/konoha-personnages', name: 'konohaCharacters', methods: ['GET'])]
     public function konohaCharactersGet(CharactersRepository $charactersRepository, MediaRepository $mediaRepository): Response
     {
@@ -20,6 +37,14 @@ class VillageController extends AbstractController
         ]);
     }
 
+    /**
+     * Summary of kumoCharactersGet*
+     *
+     * @param CharactersRepository $charactersRepository Object
+     * @param MediaRepository $mediaRepository Object
+     *
+     * @return Response
+     */
     #[Route('/kumo-personnages', name: 'kumoCharacters', methods: ['GET'])]
     public function kumoCharactersGet(CharactersRepository $charactersRepository, MediaRepository $mediaRepository): Response
     {
@@ -29,6 +54,14 @@ class VillageController extends AbstractController
         ]);
     }
 
+    /**
+     * Summary of sunaCharactersGet
+     *
+     * @param CharactersRepository $charactersRepository Object
+     * @param MediaRepository $mediaRepository Object
+     *
+     * @return Response
+     */
     #[Route('/suna-personnages', name: 'sunaCharacters', methods: ['GET'])]
     public function sunaCharactersGet(CharactersRepository $charactersRepository, MediaRepository $mediaRepository): Response
     {

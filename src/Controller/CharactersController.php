@@ -1,4 +1,13 @@
 <?php
+/**
+ * PHP version 8.
+ *
+ * @category Controller
+ * @package  CharactersController
+ * @author   Yokke <mdembelepro@gmail.com>
+ * @license  ISC License
+ * @link     https://github.com/Jexinte/Naruto
+ */
 
 namespace App\Controller;
 
@@ -14,8 +23,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 
-class CharacterController extends AbstractController
+class CharactersController extends AbstractController
 {
+    /**
+     * Summary of character Detail
+     *
+     * @param Characters $character Object
+     * @param MediaRepository $mediaRepository Object
+     *
+     * @return Response
+     */
     #[Route('/personnage/{slug}', name: 'character', methods: ['GET'])]
     public function characterDetail(Characters $character, MediaRepository $mediaRepository): Response
     {
@@ -26,6 +43,11 @@ class CharacterController extends AbstractController
         ]);
     }
 
+    /**
+     * Summary of addCharacterGet
+     *
+     * @return Response
+     */
     #[Route('/ajouter-un-personnage', name: 'addCharacterGet', methods: ['GET'])]
     public function addCharacterGet(): Response
     {
@@ -35,6 +57,15 @@ class CharacterController extends AbstractController
         ]);
     }
 
+    /**
+     * Summary of addCharacterPost
+     *
+     * @param Request $request Object
+     * @param CharactersRepository $charactersRepository Object
+     * @param FileGenerator $fileGenerator Object
+     *
+     * @return Response
+     */
     #[Route('/ajouter-un-personnage', name: 'addCharacterPost', methods: ['POST'])]
     public function addCharacterPost(Request $request, CharactersRepository $charactersRepository, FileGenerator $fileGenerator): Response
     {

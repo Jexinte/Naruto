@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * PHP version 8.
+ *
+ * @category tests
+ * @package  MediaTest
+ * @author   Yokke <mdembelepro@gmail.com>
+ * @license  ISC License
+ * @link     https://github.com/Jexinte/Naruto
+ */
 namespace App\Tests\Unit\Entity;
 
 use App\Entity\Media;
@@ -8,6 +16,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class MediaTest extends TestCase
 {
+    /**
+     * Summary of
+     *
+     * @return void
+     */
     public function testImageCardPathShouldReturnTheSamePath(): void
     {
         $media = new Media();
@@ -16,7 +29,11 @@ class MediaTest extends TestCase
         preg_match('/(?<=Temp).*/', $file, $matches);
         $this->assertEquals('C:\Users\Mamad\AppData\Local\Temp' . current($matches), $media->getImageCardPath());
     }
-
+     /**
+      * Summary of testImageHistoryPathShouldReturnTheSamePath
+      *
+     * @return void
+     */
     public function testImageHistoryPathShouldReturnTheSamePath(): void
     {
         $media = new Media();
@@ -25,7 +42,11 @@ class MediaTest extends TestCase
         preg_match('/(?<=Temp).*/', $file, $matches);
         $this->assertEquals('C:\Users\Mamad\AppData\Local\Temp' . current($matches), $media->getImageHistoryPath());
     }
-
+    /**
+     * Summary of testImageCardFileShouldReturnUploadFileObject
+     *
+     * @return void
+     */
     public function testImageCardFileShouldReturnUploadFileObject(): void
     {
         $media = new Media();
@@ -37,7 +58,11 @@ class MediaTest extends TestCase
         $this->assertInstanceOf(UploadedFile::class, $media->getImageCardFile());
 
     }
-
+     /**
+      * Summary of testImageHistoryCardFileShouldReturnUploadFileObject
+      *
+     * @return void
+     */
     public function testImageHistoryCardFileShouldReturnUploadFileObject(): void
     {
         $media = new Media();
