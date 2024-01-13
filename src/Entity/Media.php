@@ -29,12 +29,14 @@ class Media
 
     #[ORM\Column(length: 255)]
     private ?string $imageHistoryPath = null;
+
     #[Assert\File(
         extensions: ['jpg','png','webp','jpeg'],
         extensionsMessage: 'Oops! Seuls les fichiers ayant les extensions suivantes sont acceptées : jpg,png,webp et jpeg'
     )]
     #[Assert\NotBlank(message: 'Oops! Veuillez sélectionner une image pour la carte du personnage!')]
     private ?UploadedFile $imageCardFile;
+
     #[Assert\File(
         extensions: ['jpg','png','webp','jpeg'],
         extensionsMessage: 'Oops! Seuls les fichiers ayant les extensions suivantes sont acceptées : jpg,png,webp et jpeg'
@@ -48,7 +50,6 @@ class Media
     /**
      * Summary of getId
      *
-     * @return int|null
      */
     public function getId(): ?int
     {
@@ -58,7 +59,6 @@ class Media
     /**
      * Summary of getImageCardPath
      *
-     * @return string|null
      */
     public function getImageCardPath(): ?string
     {
@@ -82,7 +82,6 @@ class Media
     /**
      * Summary of getImageHistoryPath
      *
-     * @return string|null
      */
     public function getImageHistoryPath(): ?string
     {
@@ -106,7 +105,6 @@ class Media
     /**
      * Summary of getCharacters
      *
-     * @return Characters|null
      */
     public function getCharacters(): ?Characters
     {
@@ -130,7 +128,6 @@ class Media
     /**
      * Summary of getImageCardFile
      *
-     * @return UploadedFile|null
      */
     public function getImageCardFile(): ?UploadedFile
     {
@@ -140,19 +137,17 @@ class Media
     /**
      * Summary of setImageCardFile
      *
-     * @param UploadedFile|null $imageCardFile Object
+     * @param UploadedFile|null $uploadedFile Object
      *
-     * @return void
      */
-    public function setImageCardFile(?UploadedFile $imageCardFile): void
+    public function setImageCardFile(?UploadedFile $uploadedFile): void
     {
-        $this->imageCardFile = $imageCardFile;
+        $this->imageCardFile = $uploadedFile;
     }
 
     /**
      * Summary of getImageHistoryFile
      *
-     * @return UploadedFile|null
      */
     public function getImageHistoryFile(): ?UploadedFile
     {
@@ -162,11 +157,10 @@ class Media
     /**
      * Summary of setImageHistoryFile
      *
-     * @param UploadedFile|null $imageHistoryFile Object
-     * @return void
+     * @param UploadedFile|null $uploadedFile Object
      */
-    public function setImageHistoryFile(?UploadedFile $imageHistoryFile): void
+    public function setImageHistoryFile(?UploadedFile $uploadedFile): void
     {
-        $this->imageHistoryFile = $imageHistoryFile;
+        $this->imageHistoryFile = $uploadedFile;
     }
 }

@@ -22,11 +22,10 @@ class AppFixtures extends Fixture
     /**
      * Summary of load
      *
-     * @param ObjectManager $manager Object
+     * @param ObjectManager $objectManager Object
      *
-     * @return void
      */
-    public function load(ObjectManager $manager): void
+    public function load(ObjectManager $objectManager): void
     {
         $charactersFilePath = file_get_contents('./config/personnages_data.json');
         $characters = json_decode($charactersFilePath, true);
@@ -41,17 +40,17 @@ class AppFixtures extends Fixture
             $media->setCharacters($newCharacter);
             $media->setImageCardPath($character['imageCardPath']);
             $media->setImageHistoryPath($character['imageHistoryPath']);
-            $manager->persist($newCharacter);
-            $manager->persist($media);
+            $objectManager->persist($newCharacter);
+            $objectManager->persist($media);
         }
-        $manager->flush();
+
+        $objectManager->flush();
 
     }
 
     /**
      * Summary of slugger
      *
-     * @return AsciiSlugger
      */
     public function slugger(): AsciiSlugger
     {

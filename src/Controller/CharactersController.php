@@ -31,7 +31,6 @@ class CharactersController extends AbstractController
      * @param Characters $character Object
      * @param MediaRepository $mediaRepository Object
      *
-     * @return Response
      */
     #[Route('/personnage/{slug}', name: 'character', methods: ['GET'])]
     public function characterDetail(Characters $character, MediaRepository $mediaRepository): Response
@@ -46,7 +45,6 @@ class CharactersController extends AbstractController
     /**
      * Summary of addCharacterGet
      *
-     * @return Response
      */
     #[Route('/ajouter-un-personnage', name: 'addCharacterGet', methods: ['GET'])]
     public function addCharacterGet(): Response
@@ -64,14 +62,13 @@ class CharactersController extends AbstractController
      * @param CharactersRepository $charactersRepository Object
      * @param FileGenerator $fileGenerator Object
      *
-     * @return Response
      */
     #[Route('/ajouter-un-personnage', name: 'addCharacterPost', methods: ['POST'])]
     public function addCharacterPost(Request $request, CharactersRepository $charactersRepository, FileGenerator $fileGenerator): Response
     {
         $form = $this->createForm(CharacterType::class);
         $media = new Media();
-        $slugger = new AsciiSlugger();
+        $asciiSlugger = new AsciiSlugger();
         $form->handleRequest($request);
 
         if ($form->isValid() && $form->isSubmitted()) {
@@ -84,7 +81,7 @@ class CharactersController extends AbstractController
             $media->setImageHistoryPath($fileGenerator->saveHistoryImg($imageHistory));
 
             $character->addMedia($media);
-            $character->setSlug($character->getName(), $slugger);
+            $character->setSlug($character->getName(), $asciiSlugger);
             $charactersRepository->getEm()->persist($character);
             $charactersRepository->getEm()->flush();
 
@@ -92,6 +89,7 @@ class CharactersController extends AbstractController
             return $this->redirectToRoute('homepage');
 
         }
+
         return $this->render('character/add_character.twig', [
             'form' => $form,
         ]);

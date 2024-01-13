@@ -29,17 +29,16 @@ class MediaRepository extends ServiceEntityRepository
     /**
      * Summary of __construct
      *
-     * @param ManagerRegistry $registry Object
+     * @param ManagerRegistry $managerRegistry Object
      */
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $managerRegistry)
     {
-        parent::__construct($registry, Media::class);
+        parent::__construct($managerRegistry, Media::class);
     }
 
     /**
      * Summary of getEm
      *
-     * @return EntityManagerInterface
      */
     public function getEm(): EntityManagerInterface
     {

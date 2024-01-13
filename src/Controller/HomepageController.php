@@ -25,7 +25,6 @@ class HomepageController extends AbstractController
      * @param CharactersRepository $characterRepository Object
      * @param MediaRepository $mediaRepository Object
      *
-     * @return Response
      */
     #[Route('/', name: 'homepage')]
     public function homepage(CharactersRepository $characterRepository, MediaRepository $mediaRepository): Response

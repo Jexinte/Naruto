@@ -39,7 +39,7 @@ class Characters
     #[Assert\NotBlank(message: 'Oops! Merci de spécifier l\'histoire du personnage!')]
     #[Assert\Regex(
         pattern: '/^[A-Z]{1}[a-z\s]{1,}/',
-        message: 'Oops! L\'histoire du personnage doit commencer par une majuscule !',
+        message: "Oops! L'histoire du personnage doit commencer par une majuscule !",
         match: true
     )]
     private ?string $history = null;
@@ -47,11 +47,13 @@ class Characters
 
     #[ORM\Column(length: 255)]
     private ?string $village = null;
+
     #[ORM\Column(length: 255)]
     private ?string $slug;
 
     #[ORM\OneToMany(mappedBy: 'characters', targetEntity: Media::class, cascade: ['persist'])]
     private Collection $media;
+
     #[Assert\Valid]
     #[Assert\Type(type: Media::class)]
     private Media $mediaForm;
@@ -67,7 +69,6 @@ class Characters
     /**
      * Summary of getId
      *
-     * @return int|null
      */
     public function getId(): ?int
     {
@@ -77,7 +78,6 @@ class Characters
     /**
      * Summary of getName
      *
-     * @return string|null
      */
     public function getName(): ?string
     {
@@ -101,7 +101,6 @@ class Characters
     /**
      * Summary of getHistory
      *
-     * @return string|null
      */
     public function getHistory(): ?string
     {
@@ -126,7 +125,6 @@ class Characters
     /**
      * Summary of getVillage
      *
-     * @return string|null
      */
     public function getVillage(): ?string
     {
@@ -150,7 +148,6 @@ class Characters
     /**
      * Summary of getSlug
      *
-     * @return string|null
      */
     public function getSlug(): ?string
     {
@@ -161,13 +158,12 @@ class Characters
      * Summary of setSlug
      *
      * @param string|null $slug String
-     * @param AsciiSlugger $slugger Object
+     * @param AsciiSlugger $asciiSlugger Object
      *
-     * @return void
      */
-    public function setSlug(?string $slug, AsciiSlugger $slugger): void
+    public function setSlug(?string $slug, AsciiSlugger $asciiSlugger): void
     {
-        $this->slug = $slugger->slug($slug, '-')->lower();
+        $this->slug = $asciiSlugger->slug($slug, '-')->lower();
     }
 
     /**
@@ -186,7 +182,7 @@ class Characters
      *
      * @return $this
      */
-    public function addMedia(Media $media)
+    public function addMedia(Media $media): static
     {
         if (!$this->media->contains($media)) {
             $this->media->add($media);
@@ -200,7 +196,6 @@ class Characters
     /**
      * Summary of getMediaForm
      *
-     * @return Media
      */
     public function getMediaForm(): Media
     {
@@ -210,13 +205,12 @@ class Characters
     /**
      * Summary of setMediaForm
      *
-     * @param Media $mediaForm Object
+     * @param Media $media Object
      *
-     * @return void
      */
-    public function setMediaForm(Media $mediaForm): void
+    public function setMediaForm(Media $media): void
     {
-        $this->mediaForm = $mediaForm;
+        $this->mediaForm = $media;
     }
 
 

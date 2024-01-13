@@ -29,17 +29,16 @@ class CharactersRepository extends ServiceEntityRepository
     /**
      * Summary of __construct
      *
-     * @param ManagerRegistry $registry Object
+     * @param ManagerRegistry $managerRegistry Object
      */
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $managerRegistry)
     {
-        parent::__construct($registry, Characters::class);
+        parent::__construct($managerRegistry, Characters::class);
     }
 
     /**
      * Summary of getEm
      *
-     * @return EntityManagerInterface
      */
     public function getEm(): EntityManagerInterface
     {

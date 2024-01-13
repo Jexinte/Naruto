@@ -26,14 +26,13 @@ class CharacterType extends AbstractType
     /**
      * Summary of buildForm
      *
-     * @param FormBuilderInterface $builder Object
+     * @param FormBuilderInterface $formBuilder Object
      * @param array $options Array
      *
-     * @return void
      */
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function buildForm(FormBuilderInterface $formBuilder, array $options): void
     {
-        $builder
+        $formBuilder
             ->add('name', TextType::class, [
                 'label' => 'Nom du personnage',
                 'required' => false,
@@ -59,13 +58,12 @@ class CharacterType extends AbstractType
     /**
      * Summary of configureOptions
      *
-     * @param OptionsResolver $resolver Object
+     * @param OptionsResolver $optionsResolver Object
      *
-     * @return void
      */
-    public function configureOptions(OptionsResolver $resolver): void
+    public function configureOptions(OptionsResolver $optionsResolver): void
     {
-        $resolver->setDefaults([
+        $optionsResolver->setDefaults([
             'data_class' => Characters::class,
             'attr' => ['id' => 'form']
         ]);
