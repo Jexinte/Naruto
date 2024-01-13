@@ -30,7 +30,7 @@ class Media
         extensions: ['jpg','png','webp','jpeg'],
         extensionsMessage: 'Oops! Seuls les fichiers ayant les extensions suivantes sont acceptées : jpg,png,webp et jpeg'
     )]
-    #[Assert\NotBlank(message: 'Oops! Veuillez sélectionner une image pour la carte du personnage!')]
+    #[Assert\NotBlank(message: 'Oops! Veuillez sélectionner une image pour l\'histoire du personnage!')]
     private ?UploadedFile $imageHistoryFile;
 
     #[ORM\ManyToOne(inversedBy: 'media')]

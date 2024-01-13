@@ -18,7 +18,7 @@ class Characters
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'Oops! Ce champ ne peut être vide !')]
+    #[Assert\NotBlank(message: 'Oops! Merci de spécifier le nom du personnage !')]
     #[Assert\Regex(
         pattern: '/^[A-Z]{1}[a-z\s]{1,}/',
         message: 'Oops! Le nom du personnage doit commencer par une majuscule !',
@@ -27,7 +27,12 @@ class Characters
     private ?string $name = null;
 
     #[ORM\Column(type: 'text')]
-    #[Assert\NotBlank(message: 'Oops! Ce champ ne peut être vide !')]
+    #[Assert\NotBlank(message: 'Oops! Merci de spécifier l\'histoire du personnage!')]
+    #[Assert\Regex(
+        pattern: '/^[A-Z]{1}[a-z\s]{1,}/',
+        message: 'Oops! L\'histoire du personnage doit commencer par une majuscule !',
+        match: true
+    )]
     private ?string $history = null;
 
 
