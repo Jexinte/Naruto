@@ -57,6 +57,23 @@ About 2 years after the creation of this project, I had gained enough skills to 
 
 The framework used to update the project is Symfony.
 
+# Screenshot V4
+
+## Homepage
+![Homepage](https://github.com/Jexinte/Naruto/assets/88725081/2fbb2805-00bb-431f-a401-3c735cadcf95)
+
+## Konoha Ninjas
+![Konoha Characters](https://github.com/Jexinte/Naruto/assets/88725081/c974448f-f11b-48b0-9b91-6471e737a3c3)
+
+## Kumo Ninjas
+![Kumo Characters](https://github.com/Jexinte/Naruto/assets/88725081/0f40d82c-e3e6-478d-96dc-9fbadddb5c38)
+
+## Suna Ninjas
+![Suna Characters](https://github.com/Jexinte/Naruto/assets/88725081/79584e8f-1e74-4c40-9105-da208dd5e1e1)
+
+## Add Character 
+![Add Character](https://github.com/Jexinte/Naruto/assets/88725081/f6fad76e-05a6-4799-b695-0363cc6d757a)
+
 # Author
 - Github - [@Jexinte](https://github.com/Jexinte)
 - Frontend Mentor - [@Jexinte](https://www.frontendmentor.io/profile/Jexinte)
