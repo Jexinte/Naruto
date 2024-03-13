@@ -77,5 +77,5 @@ The framework used to update the project is Symfony.
 # Author
 - Github - [@Jexinte](https://github.com/Jexinte)
 - Frontend Mentor - [@Jexinte](https://www.frontendmentor.io/profile/Jexinte)
-- Codewars - [@Jexinte](https://www.codewars.com/users/Jexinte))
+- Codewars - [@Jexinte](https://www.codewars.com/users/Jexinte)
 
